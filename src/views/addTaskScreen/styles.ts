@@ -33,4 +33,11 @@ export default StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
   },
+  backButton: {
+    position: "absolute",
+    top: 40,
+    left: 20,
+    backgroundColor: "transparent",
+    padding: 10,
+  },
 });

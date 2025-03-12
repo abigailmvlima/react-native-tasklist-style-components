@@ -2,6 +2,8 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
+import { View, StatusBar } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -33,16 +35,44 @@ export default function RootLayout() {
   }
 
   return (
-    <StackNavigator.Navigator initialRouteName="Welcome">
-      <StackNavigator.Screen
-        name="Welcome"
-        component={WelcomeScreen}
-        options={{ headerShown: false }}
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "#E6CCFF",
+      }}
+    >
+      <StatusBar
+        backgroundColor="#E6CCFF"
+        barStyle="dark-content"
+        translucent={false}
       />
-      <StackNavigator.Screen name="Login" component={LoginScreen} />
-      <StackNavigator.Screen name="Register" component={RegisterScreen} />
-      <StackNavigator.Screen name="TaskList" component={TaskListScreen} />
-      <StackNavigator.Screen name="AddTask" component={AddTaskScreen} />
-    </StackNavigator.Navigator>
+      <StackNavigator.Navigator initialRouteName="Welcome">
+        <StackNavigator.Screen
+          name="Welcome"
+          component={WelcomeScreen}
+          options={{ headerShown: false }}
+        />
+        <StackNavigator.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <StackNavigator.Screen
+          name="Register"
+          component={RegisterScreen}
+          options={{ headerShown: false }}
+        />
+        <StackNavigator.Screen
+          name="TaskList"
+          component={TaskListScreen}
+          options={{ headerShown: false }}
+        />
+        <StackNavigator.Screen
+          name="AddTask"
+          component={AddTaskScreen}
+          options={{ headerShown: false }}
+        />
+      </StackNavigator.Navigator>
+    </View>
   );
 }

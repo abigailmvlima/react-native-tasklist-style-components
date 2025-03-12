@@ -2,16 +2,27 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    display: "flex",
     backgroundColor: "#E6CCFF",
     paddingHorizontal: 20,
+    flexDirection: "column",
+    flexGrow: 1,
+  },
+  header: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginVertical: 20,
+  },
+  arrow: {
+    display: "flex",
+    flexDirection: "row",
   },
   title: {
+    display: "flex",
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 20,
     color: "#4B0082",
   },
   taskContainer: {
