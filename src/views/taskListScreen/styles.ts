@@ -44,4 +44,28 @@ export default StyleSheet.create({
     fontSize: 16,
     color: "#4B0082",
   },
+  loadingText: {
+    fontSize: 16,
+    color: "#4B0082",
+    textAlign: "center",
+  },
+  inputContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: 10,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+  },
+  input: {
+    flex: 1,
+    height: 40,
+    borderWidth: 1,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    fontSize: 16,
+  },
+  addButton: {
+    marginLeft: 10,
+  },
 });
