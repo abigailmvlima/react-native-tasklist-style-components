@@ -66,19 +66,13 @@ export function TaskListScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity
-          style={styles.arrow}
-          onPress={() => navigation.goBack()}
-        >
-          <Ionicons name="arrow-back" size={24} color="#4B0082" />
-        </TouchableOpacity>
-        <Text style={styles.title}>Task List</Text>
+        <Text style={styles.title}>Lista de Tarefas</Text>
       </View>
 
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Enter new task"
+          placeholder="Insira a tarefa"
           value={newTask}
           onChangeText={setNewTask}
         />

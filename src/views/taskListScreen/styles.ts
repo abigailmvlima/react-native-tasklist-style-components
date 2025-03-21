@@ -4,16 +4,14 @@ export default StyleSheet.create({
   container: {
     display: "flex",
     backgroundColor: "#E6CCFF",
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
     flexDirection: "column",
     flexGrow: 1,
   },
   header: {
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
-    marginVertical: 20,
+    marginVertical: 35,
   },
   arrow: {
     display: "flex",
@@ -51,9 +49,7 @@ export default StyleSheet.create({
   },
   inputContainer: {
     flexDirection: "row",
-    alignItems: "center",
     marginVertical: 10,
-    paddingHorizontal: 10,
     borderRadius: 8,
   },
   input: {
