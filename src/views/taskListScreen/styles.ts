@@ -5,6 +5,7 @@ export default StyleSheet.create({
     display: "flex",
     backgroundColor: "#E6CCFF",
     paddingHorizontal: 15,
+    paddingVertical: 10,
     flexDirection: "column",
     flexGrow: 1,
   },
@@ -60,8 +61,14 @@ export default StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 10,
     fontSize: 16,
+    outline: "none",
   },
   addButton: {
     marginLeft: 10,
+  },
+  logoutButton: {
+    position: "absolute",
+    right: 16,
+    top: 16,
   },
 });

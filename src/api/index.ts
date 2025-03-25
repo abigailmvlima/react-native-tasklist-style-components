@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://172.20.192.1:3333";
+const API_BASE_URL = "http:/192.168.3.21:3333";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -30,8 +30,9 @@ export const apiClient = {
     }
   },
 
-  register: (name: string, email: string, password: string) =>
-    api.post("/users", { name, email, password }),
+  register: async (name: string, email: string, password: string) => {
+    return await api.post("/users", { name, email, password });
+  },
 
   updateUser: (
     name: string,

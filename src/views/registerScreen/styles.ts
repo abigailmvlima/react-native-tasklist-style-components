@@ -40,4 +40,7 @@ export default StyleSheet.create({
     backgroundColor: "transparent",
     padding: 10,
   },
+  arrowBack: {
+    alignSelf: "flex-start",
+  },
 });

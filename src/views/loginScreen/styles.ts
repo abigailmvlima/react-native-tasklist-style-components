@@ -28,4 +28,8 @@ export default StyleSheet.create({
     marginTop: 10,
   },
   buttonText: { color: "#FFFFFF", fontSize: 16, textAlign: "center" },
+  backButton: {
+    alignSelf: "flex-start",
+    padding: 25,
+  },
 });

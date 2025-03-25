@@ -63,8 +63,15 @@ export function TaskListScreen() {
     }
   };
 
+  const handleLogout = () => {
+    navigation.navigate("Welcome");
+  };
+
   return (
     <View style={styles.container}>
+      <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+        <Ionicons name="close-outline" size={28} color="#4B0082" />
+      </TouchableOpacity>
       <View style={styles.header}>
         <Text style={styles.title}>Lista de Tarefas</Text>
       </View>
