@@ -64,13 +64,13 @@ export function TaskListScreen() {
   };
 
   const handleLogout = () => {
-    navigation.navigate("Welcome");
+    navigation.navigate({ name: "Login", params: {} });
   };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
-        <Ionicons name="close-outline" size={28} color="#4B0082" />
+        <Ionicons name="close-outline" size={28} color="#083c48" />
       </TouchableOpacity>
       <View style={styles.header}>
         <Text style={styles.title}>Lista de Tarefas</Text>
@@ -84,7 +84,7 @@ export function TaskListScreen() {
           onChangeText={setNewTask}
         />
         <TouchableOpacity style={styles.addButton} onPress={handleCreateTask}>
-          <Ionicons name="add-circle" size={36} color="#4B0082" />
+          <Ionicons name="add-circle" size={36} color="#0d4754" />
         </TouchableOpacity>
       </View>
 
@@ -98,7 +98,7 @@ export function TaskListScreen() {
             <View style={styles.taskContainer}>
               <Text style={styles.taskText}>{item.task}</Text>
               <TouchableOpacity onPress={() => handleDeleteTask(item.id)}>
-                <Ionicons name="trash" size={24} color="red" />
+                <Ionicons name="trash" size={24} color="#fa0000" />
               </TouchableOpacity>
             </View>
           )}

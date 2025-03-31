@@ -29,18 +29,11 @@ export function LoginScreen() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.backButton}
-        onPress={() => navigation.navigate("Welcome")}
-      >
-        <Ionicons name="arrow-back" size={24} color="#4B0082" />
-      </TouchableOpacity>
-
-      <Text style={styles.title}>Task List</Text>
+      <Text style={styles.title}>Lista de Tarefas</Text>
       <TextInput
         style={styles.input}
         placeholder="Email"
-        placeholderTextColor="#4B0082"
+        placeholderTextColor="#546b6d"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
@@ -50,7 +43,7 @@ export function LoginScreen() {
         style={styles.input}
         placeholder="Password"
         secureTextEntry
-        placeholderTextColor="#4B0082"
+        placeholderTextColor="#546b6d"
         value={password}
         onChangeText={setPassword}
       />
@@ -62,6 +55,10 @@ export function LoginScreen() {
         <Text style={styles.buttonText}>
           {loading ? "Loading..." : "Login"}
         </Text>
+      </TouchableOpacity>
+      <Text style={styles.orText}>ou</Text>
+      <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+        <Text style={styles.linkText}>Cadastre-se</Text>
       </TouchableOpacity>
     </View>
   );

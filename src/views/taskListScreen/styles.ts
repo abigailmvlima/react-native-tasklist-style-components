@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     display: "flex",
-    backgroundColor: "#E6CCFF",
-    paddingHorizontal: 15,
+    backgroundColor: "#88d0e07b",
+    paddingHorizontal: 25,
     paddingVertical: 10,
     flexDirection: "column",
     flexGrow: 1,
@@ -22,7 +22,7 @@ export default StyleSheet.create({
     display: "flex",
     fontSize: 24,
     fontWeight: "bold",
-    color: "#4B0082",
+    color: "#0d424e",
   },
   taskContainer: {
     flexDirection: "row",
@@ -41,11 +41,11 @@ export default StyleSheet.create({
   },
   taskText: {
     fontSize: 16,
-    color: "#4B0082",
+    color: "#051112",
   },
   loadingText: {
     fontSize: 16,
-    color: "#4B0082",
+    color: "#546b6d",
     textAlign: "center",
   },
   inputContainer: {

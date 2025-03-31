@@ -7,7 +7,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { createStackNavigator } from "@react-navigation/stack";
-import { WelcomeScreen } from "@/src/views/welcomeScreen";
 import { LoginScreen } from "@/src/views/loginScreen";
 import { RegisterScreen } from "@/src/views/registerScreen";
 import { TaskListScreen } from "@/src/views/taskListScreen";
@@ -38,20 +37,15 @@ export default function RootLayout() {
     <View
       style={{
         flex: 1,
-        backgroundColor: "#E6CCFF",
+        backgroundColor: "#88d0e07b",
       }}
     >
       <StatusBar
-        backgroundColor="#E6CCFF"
+        backgroundColor="#88d0e07b"
         barStyle="dark-content"
         translucent={false}
       />
-      <StackNavigator.Navigator initialRouteName="Welcome">
-        <StackNavigator.Screen
-          name="Welcome"
-          component={WelcomeScreen}
-          options={{ headerShown: false }}
-        />
+      <StackNavigator.Navigator initialRouteName="Login">
         <StackNavigator.Screen
           name="Login"
           component={LoginScreen}

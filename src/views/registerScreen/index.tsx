@@ -43,16 +43,16 @@ export function RegisterScreen() {
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.arrowBack}
-        onPress={() => navigation.navigate("Welcome")}
+        onPress={() => navigation.navigate("Login")}
       >
-        <Ionicons name="arrow-back" size={24} color="#4B0082" />
+        <Ionicons name="arrow-back" size={24} color="#0d424e" />
       </TouchableOpacity>
-      <Text style={styles.title}>Register</Text>
+      <Text style={styles.title}>Cadastro</Text>
 
       <TextInput
         style={styles.input}
-        placeholder="Name"
-        placeholderTextColor="#4B0082"
+        placeholder="Nome"
+        placeholderTextColor="#37515692"
         value={name}
         onChangeText={setName}
       />
@@ -60,7 +60,7 @@ export function RegisterScreen() {
       <TextInput
         style={styles.input}
         placeholder="Email"
-        placeholderTextColor="#4B0082"
+        placeholderTextColor="#37515692"
         value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
@@ -69,8 +69,8 @@ export function RegisterScreen() {
 
       <TextInput
         style={styles.input}
-        placeholder="Password"
-        placeholderTextColor="#4B0082"
+        placeholder="Senha"
+        placeholderTextColor="#37515692"
         secureTextEntry
         value={password}
         onChangeText={setPassword}
@@ -78,8 +78,8 @@ export function RegisterScreen() {
 
       <TextInput
         style={styles.input}
-        placeholder="Confirm Password"
-        placeholderTextColor="#4B0082"
+        placeholder="Confirmar Senha"
+        placeholderTextColor="#37515692"
         secureTextEntry
         value={confirmPassword}
         onChangeText={setConfirmPassword}
