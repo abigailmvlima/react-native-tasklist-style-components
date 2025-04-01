@@ -1,49 +1,44 @@
-import { StyleSheet } from "react-native";
+import styled from "styled-components/native";
 
-export default StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    backgroundColor: "#88d0e07b",
-    paddingHorizontal: 20,
-    paddingTop: 100,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-    color: "#0d424e",
-  },
-  input: {
-    width: "100%",
-    borderBottomWidth: 1,
-    marginBottom: 20,
-    padding: 8,
-    color: "#2d9bb3",
-  },
-  button: {
-    backgroundColor: "#0d424e",
-    padding: 15,
-    borderRadius: 5,
-    marginTop: 20,
-    width: "100%",
-  },
-  buttonText: {
-    color: "#FFFFFF",
-    fontSize: 16,
-    textAlign: "center",
-  },
-  backButton: {
-    position: "absolute",
-    top: 40,
-    left: 20,
-    backgroundColor: "transparent",
-    padding: 10,
-  },
-  arrowBack: {
-    position: "absolute",
-    top: 40,
-    left: 20,
-    zIndex: 1,
-  },
-});
+export const Container = styled.View`
+  flex: 1;
+  align-items: center;
+  background-color: #88d0e07b;
+  padding: 100px 20px 0;
+`;
+
+export const Title = styled.Text`
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0d424e;
+`;
+
+export const Input = styled.TextInput`
+  width: 100%;
+  border-bottom-width: 1px;
+  margin-bottom: 20px;
+  padding: 8px;
+  color: #2d9bb3;
+`;
+
+export const Button = styled.TouchableOpacity`
+  background-color: #0d424e;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 100%;
+`;
+
+export const ButtonText = styled.Text`
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+`;
+
+export const ArrowBack = styled.TouchableOpacity`
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  z-index: 1;
+`;

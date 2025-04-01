@@ -1,9 +1,17 @@
+// index.tsx
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import { Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { apiClient } from "@/src/api";
-import styles from "./styles";
 import { Ionicons } from "@expo/vector-icons";
+import {
+  Container,
+  Title,
+  Input,
+  Button,
+  ButtonText,
+  ArrowBack,
+} from "./styles";
 
 export function RegisterScreen() {
   const navigation = useNavigation<any>();
@@ -40,25 +48,21 @@ export function RegisterScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.arrowBack}
-        onPress={() => navigation.navigate("Login")}
-      >
+    <Container>
+      <ArrowBack onPress={() => navigation.navigate("Login")}>
         <Ionicons name="arrow-back" size={24} color="#0d424e" />
-      </TouchableOpacity>
-      <Text style={styles.title}>Cadastro</Text>
+      </ArrowBack>
 
-      <TextInput
-        style={styles.input}
+      <Title>Cadastro</Title>
+
+      <Input
         placeholder="Nome"
         placeholderTextColor="#37515692"
         value={name}
         onChangeText={setName}
       />
 
-      <TextInput
-        style={styles.input}
+      <Input
         placeholder="Email"
         placeholderTextColor="#37515692"
         value={email}
@@ -67,8 +71,7 @@ export function RegisterScreen() {
         autoCapitalize="none"
       />
 
-      <TextInput
-        style={styles.input}
+      <Input
         placeholder="Senha"
         placeholderTextColor="#37515692"
         secureTextEntry
@@ -76,8 +79,7 @@ export function RegisterScreen() {
         onChangeText={setPassword}
       />
 
-      <TextInput
-        style={styles.input}
+      <Input
         placeholder="Confirmar Senha"
         placeholderTextColor="#37515692"
         secureTextEntry
@@ -85,9 +87,9 @@ export function RegisterScreen() {
         onChangeText={setConfirmPassword}
       />
 
-      <TouchableOpacity style={styles.button} onPress={handleRegister}>
-        <Text style={styles.buttonText}>Cadastrar</Text>
-      </TouchableOpacity>
-    </View>
+      <Button onPress={handleRegister}>
+        <ButtonText>Cadastrar</ButtonText>
+      </Button>
+    </Container>
   );
 }
