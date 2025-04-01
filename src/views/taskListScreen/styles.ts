@@ -1,74 +1,71 @@
-import { StyleSheet } from "react-native";
+import styled from "styled-components/native";
 
-export default StyleSheet.create({
-  container: {
-    display: "flex",
-    backgroundColor: "#88d0e07b",
-    paddingHorizontal: 25,
-    paddingVertical: 10,
-    flexDirection: "column",
-    flexGrow: 1,
-  },
-  header: {
-    display: "flex",
-    alignItems: "center",
-    marginVertical: 35,
-  },
-  arrow: {
-    display: "flex",
-    flexDirection: "row",
-  },
-  title: {
-    display: "flex",
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#0d424e",
-  },
-  taskContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "#FFF",
-    padding: 15,
-    borderRadius: 5,
-    marginVertical: 5,
-    width: "100%",
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
-    elevation: 2,
-  },
-  taskText: {
-    fontSize: 16,
-    color: "#051112",
-  },
-  loadingText: {
-    fontSize: 16,
-    color: "#546b6d",
-    textAlign: "center",
-  },
-  inputContainer: {
-    flexDirection: "row",
-    marginVertical: 10,
-    borderRadius: 8,
-  },
-  input: {
-    flex: 1,
-    height: 40,
-    borderWidth: 1,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
-    paddingHorizontal: 10,
-    fontSize: 16,
-    outline: "none",
-  },
-  addButton: {
-    marginLeft: 10,
-  },
-  logoutButton: {
-    position: "absolute",
-    right: 16,
-    top: 16,
-  },
-});
+export const Container = styled.View`
+  flex: 1;
+  background-color: #49818e7c;
+  padding: 10px 25px;
+`;
+
+export const Header = styled.View`
+  align-items: center;
+  margin: 35px 0;
+`;
+
+export const Title = styled.Text`
+  font-size: 24px;
+  font-weight: bold;
+  color: #0d424e;
+`;
+
+export const InputContainer = styled.View`
+  flex-direction: row;
+  margin: 10px 0;
+  border-radius: 8px;
+`;
+
+export const Input = styled.TextInput`
+  flex: 1;
+  height: 40px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 16px;
+`;
+
+export const AddButton = styled.TouchableOpacity`
+  margin-left: 10px;
+  justify-content: center;
+`;
+
+export const LogoutButton = styled.TouchableOpacity`
+  position: absolute;
+  right: 16px;
+  top: 16px;
+`;
+
+export const TaskContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 5px 0;
+  shadow-color: #000;
+  shadow-opacity: 0.1;
+  shadow-offset: 0px 2px;
+  shadow-radius: 4px;
+  elevation: 2;
+`;
+
+export const TaskText = styled.Text`
+  font-size: 16px;
+  color: #8dc4cb;
+`;
+
+export const LoadingText = styled.Text`
+  font-size: 16px;
+  color: #546b6d;
+  text-align: center;
+`;

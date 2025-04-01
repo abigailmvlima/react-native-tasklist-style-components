@@ -1,18 +1,23 @@
+// index.tsx
 import React, { useState, useEffect } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  TextInput,
-  Alert,
-} from "react-native";
+import { FlatList, TextInput, Alert } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "@/src/types/navigation";
 import { apiClient } from "@/src/api";
-import styles from "./styles";
+import {
+  Container,
+  Header,
+  Title,
+  InputContainer,
+  Input,
+  AddButton,
+  LogoutButton,
+  TaskContainer,
+  TaskText,
+  LoadingText,
+} from "./styles";
 
 // Definir o tipo da navegação
 type NavigationProp = StackNavigationProp<RootStackParamList, "TaskList">;
@@ -55,8 +60,8 @@ export function TaskListScreen() {
       return;
     }
     try {
-      const newTaskResponse = await apiClient.createTask(newTask); // ✅ Retorna os dados corretamente
-      setTasks((prevTasks) => [...prevTasks, newTaskResponse]); // ✅ Adiciona a nova tarefa corretamente
+      const newTaskResponse = await apiClient.createTask(newTask);
+      setTasks((prevTasks) => [...prevTasks, newTaskResponse]);
       setNewTask("");
     } catch (error) {
       Alert.alert("Error", "Failed to create task");
@@ -64,46 +69,46 @@ export function TaskListScreen() {
   };
 
   const handleLogout = () => {
-    navigation.navigate({ name: "Login", params: {} });
+    navigation.navigate("Login", {});
   };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+    <Container>
+      <LogoutButton onPress={handleLogout}>
         <Ionicons name="close-outline" size={28} color="#083c48" />
-      </TouchableOpacity>
-      <View style={styles.header}>
-        <Text style={styles.title}>Lista de Tarefas</Text>
-      </View>
+      </LogoutButton>
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
+      <Header>
+        <Title>Lista de Tarefas</Title>
+      </Header>
+
+      <InputContainer>
+        <Input
           placeholder="Insira a tarefa"
           value={newTask}
           onChangeText={setNewTask}
         />
-        <TouchableOpacity style={styles.addButton} onPress={handleCreateTask}>
+        <AddButton onPress={handleCreateTask}>
           <Ionicons name="add-circle" size={36} color="#0d4754" />
-        </TouchableOpacity>
-      </View>
+        </AddButton>
+      </InputContainer>
 
       {loading ? (
-        <Text style={styles.loadingText}>Loading...</Text>
+        <LoadingText>Loading...</LoadingText>
       ) : (
         <FlatList
           data={tasks}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
-            <View style={styles.taskContainer}>
-              <Text style={styles.taskText}>{item.task}</Text>
-              <TouchableOpacity onPress={() => handleDeleteTask(item.id)}>
+            <TaskContainer>
+              <TaskText>{item.task}</TaskText>
+              <AddButton onPress={() => handleDeleteTask(item.id)}>
                 <Ionicons name="trash" size={24} color="#fa0000" />
-              </TouchableOpacity>
-            </View>
+              </AddButton>
+            </TaskContainer>
           )}
         />
       )}
-    </View>
+    </Container>
   );
 }
