@@ -1,9 +1,17 @@
+// index.tsx
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import { Alert } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { apiClient } from "@/src/api";
-import styles from "./styles";
-import { Ionicons } from "@expo/vector-icons";
+import {
+  Container,
+  Title,
+  Input,
+  Button,
+  ButtonText,
+  OrText,
+  LinkText,
+} from "./styles";
 
 export function LoginScreen() {
   const navigation = useNavigation<any>();
@@ -28,10 +36,10 @@ export function LoginScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Lista de Tarefas</Text>
-      <TextInput
-        style={styles.input}
+    <Container>
+      <Title>Lista de Tarefas</Title>
+
+      <Input
         placeholder="Email"
         placeholderTextColor="#546b6d"
         value={email}
@@ -39,27 +47,24 @@ export function LoginScreen() {
         keyboardType="email-address"
         autoCapitalize="none"
       />
-      <TextInput
-        style={styles.input}
+
+      <Input
         placeholder="Password"
         secureTextEntry
         placeholderTextColor="#546b6d"
         value={password}
         onChangeText={setPassword}
       />
-      <TouchableOpacity
-        style={styles.button}
-        onPress={handleLogin}
-        disabled={loading}
-      >
-        <Text style={styles.buttonText}>
-          {loading ? "Loading..." : "Login"}
-        </Text>
-      </TouchableOpacity>
-      <Text style={styles.orText}>ou</Text>
-      <TouchableOpacity onPress={() => navigation.navigate("Register")}>
-        <Text style={styles.linkText}>Cadastre-se</Text>
-      </TouchableOpacity>
-    </View>
+
+      <Button onPress={handleLogin} disabled={loading}>
+        <ButtonText>{loading ? "Loading..." : "Login"}</ButtonText>
+      </Button>
+
+      <OrText>ou</OrText>
+
+      <LinkText onPress={() => navigation.navigate("Register")}>
+        Cadastre-se
+      </LinkText>
+    </Container>
   );
 }
