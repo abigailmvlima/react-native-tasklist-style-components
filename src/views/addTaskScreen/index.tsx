@@ -1,7 +1,7 @@
+// index.tsx
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import styles from "./styles";
+import { Container, Title, Input, Button, ButtonText } from "./styles";
 
 export function AddTaskScreen() {
   const navigation = useNavigation<any>();
@@ -16,18 +16,17 @@ export function AddTaskScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Add New Task</Text>
-      <TextInput
-        style={styles.input}
+    <Container>
+      <Title>Add New Task</Title>
+      <Input
         placeholder="Enter your task"
         placeholderTextColor="#4B0082"
         value={task}
         onChangeText={setTask}
       />
-      <TouchableOpacity style={styles.button} onPress={handleAddTask}>
-        <Text style={styles.buttonText}>Add Task</Text>
-      </TouchableOpacity>
-    </View>
+      <Button onPress={handleAddTask}>
+        <ButtonText>Add Task</ButtonText>
+      </Button>
+    </Container>
   );
 }
