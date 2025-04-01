@@ -10,7 +10,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "@/src/types/navigation"; // Se ainda não existir, criaremos este tipo
+import { RootStackParamList } from "@/src/types/navigation";
 import { apiClient } from "@/src/api";
 import styles from "./styles";
 
